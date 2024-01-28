@@ -1,0 +1,8 @@
+from math import *
+if __name__ == '__main__':
+
+   t = int(input())
+   for _ in range(t):
+       n,k = map(int, input().split())
+       s = list(input().split())
+       print(' '.join(s[k:]) + ' ' +' '.join(s[:k]))
