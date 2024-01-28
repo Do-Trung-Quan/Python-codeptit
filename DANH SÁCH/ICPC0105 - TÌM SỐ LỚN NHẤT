@@ -1,0 +1,16 @@
+from math import *
+
+'''làm giống bài TÌM SỐ NHỎ NHẤT'''
+
+if __name__ == '__main__':
+    t = int(input())
+    while(t>0):
+        t-=1
+
+        n = list(input())
+        for i in range(len(n)):
+            if(not n[i].isdigit()):
+                n[i]=' '
+        n = ''.join(n)
+        n = list(map(int, n.split()))
+        print(max(n))
