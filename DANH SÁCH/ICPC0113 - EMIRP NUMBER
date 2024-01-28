@@ -1,0 +1,29 @@
+from math import *
+
+'''sàng số nguyên tố -> duyệt vòng for -> check các ptu có phải emirp num không'''
+
+a = [0]*1000001
+def snt():   #sàng snt
+    a[0] = a[1] = 1
+    for i in range(1000000 + 1):
+        if(a[i]==0):
+            for j in range(i*i, 1000000+1, i): a[j] = 1
+
+def check(u,n):  #hàm check
+    num = int(str(u)[::-1])   #số nghịch đảo của u
+    if(a[u]==1 or a[num]==1 or u == num or num>=n): return False  #nếu u hoặc num không là snt, hoặc u == num, hoặc num > n -> ko phải emirp num
+    return True
+
+if __name__ == '__main__':
+    snt()
+    t = int(input())
+    for _ in range(t):
+        vec = []
+        n = int(input())
+        for i in range(n):
+            if(check(i,n) and str(i) not in vec):
+                vec.append(str(i))
+                num = int(str(i)[::-1])
+                vec.append(str(num))
+        res = " ".join(vec)
+        print(res)
