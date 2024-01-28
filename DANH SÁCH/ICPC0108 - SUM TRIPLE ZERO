@@ -1,0 +1,32 @@
+from math import *
+
+'''
+sử dụng sorting + con trỏ left right
+hướng làm:
+  với mỗi phần tử vị trí i đang xét, tạo 2 con trỏ left = i+1 và right = n-1
+  nếu a[i] + a[left] + a[right] == 0 -> đó là trip zero, tăng left+=1
+  nếu a[i] + a[left] + a[right] < 0 -> tăng left += 1
+  nếu a[i] + a[left] + a[right] > 0 -> giảm right -= 1
+  duyệt như vậy tới khi left == right thì break
+'''
+
+def res(a,n):
+    num = 0
+    # print(a)
+    for i in range(n-2):
+        l = i+1; r = n-1
+        while(l<r):
+            tmp = a[i]+a[l]+a[r]
+            if(tmp == 0):
+                num+=1
+                l+=1
+            elif(tmp>0): r-=1
+            else: l+=1
+    return num
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        a = list(map(int, input().split()))
+        print(res(sorted(a), n))  #nhớ phải sort trước list input
