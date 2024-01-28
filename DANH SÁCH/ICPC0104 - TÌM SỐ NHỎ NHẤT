@@ -1,0 +1,12 @@
+from math import *
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        n = list(input())
+        for i in range(len(n)):
+            if(not n[i].isdigit()):  #với các kí tự ko phải số -> đổi thành white space
+                n[i]=' '   
+        n = ''.join(n)   #join lại list -> string
+        n = list(map(int, n.split()))   #biến string -> list các số trong xâu
+        print(min(n))  #in số nhỏ nhất trong xâu
