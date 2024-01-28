@@ -1,0 +1,21 @@
+from math import *
+
+a = [0]*int(pow(10,6)+1)
+
+def snt ():
+    a[0] = a[1] = 1
+    for i in range(1000001):
+        if(a[i]==0):
+            for u in range(i*i, 1000001, i): a[u]=1
+
+if __name__ == '__main__':
+    snt()
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        sum = 0
+        for i in range(2,n-6):
+            if(a[i]==0 and a[i+6]==0 and (a[i+4] == 0 or a[i+2] == 0)):
+                # print(i)
+                sum+=1
+        print(sum)
