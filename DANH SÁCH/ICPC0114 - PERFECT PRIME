@@ -1,0 +1,24 @@
+from math import *
+
+def snt(u):  #hàm check snt
+    if u<=1: return False
+    for i in range(2,isqrt(u)+1):
+        if(u%i==0): return False
+    return True
+
+def check(u): #check perfect prime
+    num = int(str(u)[::-1])  #nghịch đảo của u
+    sum = 0; N = n
+    while(N>0):   #duyệt chữ số của u
+        if(not snt(N%10)): return False
+        sum+=N%10
+        N//=10
+    if(not snt(u) or not snt(num) or not snt(sum)): return False
+    return True
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        if(check(n)): print('Yes')
+        else: print('No')
