@@ -1,0 +1,16 @@
+from math import *
+
+'''Đổi từ bin -> decimal rồi từ decimal -> hệ cơ số n'''
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        n = int(input())
+        num = int(input(), 2)   #khai báo xâu bin + đổi luôn bin -> dec
+        v = []    #mảng lưu kết quả
+        while(num>0):      #chia dư đổi dec -> cơ số n
+            if(num%n>=10): v.append(str(hex(num%n))[2:].upper())    #nếu dư > 9 -> đổi sang hệ 16 (VD: 15 -> F)
+            else: v.append(str(num%n))
+            num//=n
+        v.reverse()   #đảo ngược xâu và in kq
+        print(''.join(v))
