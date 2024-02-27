@@ -1,3 +1,7 @@
+'''
+hướng làm: chia n cho 10 tới khi n<=10, làm tròn hàng đơn vị của n với hàm round, trả lại số số 0 đã chia trước đó cho n
+'''
+
 t = int(input())
 for _ in range(t):
     n = int(input()); num=0
