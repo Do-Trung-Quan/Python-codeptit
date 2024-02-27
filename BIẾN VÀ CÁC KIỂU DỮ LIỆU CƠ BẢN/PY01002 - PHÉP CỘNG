@@ -1,0 +1,5 @@
+if __name__ == '__main__':
+    n = input().split()
+    a = int(n[0]); b = int(n[2]); c = int(n[4])
+    if(a + b == c): print('YES')
+    else: print('NO')
