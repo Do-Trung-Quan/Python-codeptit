@@ -1,0 +1,18 @@
+from math import *
+
+def snt(u):
+    if u<=1: return False
+    for i in range(2,isqrt(u)+1):
+        if(u%i==0): return False
+    return True
+
+if __name__ == '__main__':
+    t = int(input())
+    while(t>0):
+        t-=1
+
+        a,b = map(int, input().split())
+        n = gcd(a,b)
+        num = sum(list(map(int, list(str(n)))))
+        if(snt(num)): print('YES')
+        else: print('NO')
