@@ -1,0 +1,10 @@
+from math import *
+
+if __name__ == '__main__':
+    n = input()
+    up = low = 0
+    for i in n:
+        if(i.isupper()): up+=1
+        else: low+=1
+    if(low>=up): print(n.lower())
+    else: print(n.upper())
