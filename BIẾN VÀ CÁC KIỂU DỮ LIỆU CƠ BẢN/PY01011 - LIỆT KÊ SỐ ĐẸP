@@ -1,0 +1,27 @@
+from math import *
+
+def check(u):
+    for i in u:
+        if(int(i) % 2 != 0): return False
+    return True
+
+def init(a):
+    for i in range(2002, 8888+1, 2):
+        if(check(str(i)) and str(i)[:2] == str(i)[-2:][::-1]):
+            a.append(i)
+    for i in range(200002, 888888+1, 2):
+        if(check(str(i)) and str(i)[:3] == str(i)[-3:][::-1]):
+            a.append(i)
+
+if __name__ == '__main__':
+    a = [22, 44, 66, 88]
+    init(a)
+    t = int(input())
+    while(t>0):
+        t-=1
+
+        n = int(input())
+        for i in a:
+            if(i<n): print(i, end=' ')
+            else: break
+        print()
