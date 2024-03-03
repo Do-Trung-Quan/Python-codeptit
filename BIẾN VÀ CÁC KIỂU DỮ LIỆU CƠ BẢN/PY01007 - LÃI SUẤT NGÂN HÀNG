@@ -1,0 +1,13 @@
+from math import *
+
+if __name__ == '__main__':
+    t = int(input())
+    while(t>0):
+        t-=1
+
+        n,x,m = map(float, input().split())
+        num = 0
+        while(n<m):
+            num+=1
+            n*= (1 + x/100)
+        print(num)
