@@ -1,0 +1,11 @@
+'''
+hướng làm: xác định biến start, duyệt i từ start đến hết n với bước nhảy k (là các số lớn hơn a, nhỏ hơn bằng n, chia hết cho k), in ra các số thỏa mãn, nếu ko có thì in -1
+'''
+
+a,k,n = map(int, input().split())
+start = (a//k + 1) * k  #bắt đầu từ số nhỏ nhất lớn hơn a, chia hết cho k
+ok = 0  #boolean value kiểm tra có tồn tại dãy số thỏa mãn đầu bài ko
+for i in range(start, n+1, k):
+    ok = 1
+    print(i-a, end=' ')
+if(ok == 0): print(-1)
