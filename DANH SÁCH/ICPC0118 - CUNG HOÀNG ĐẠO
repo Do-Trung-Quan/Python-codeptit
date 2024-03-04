@@ -1,0 +1,38 @@
+'''
+description:
+- kiểm tra ngày, tháng sinh nhập vào thuộc cung hoàng đạo nào theo bảng dữ liệu cho trước:
+
+Bach Duong: 21 tháng 3 - 19 tháng 4
+Kim Nguu: 20 tháng 4 - 20 tháng 5
+Song Tu: 21 tháng 5 - 20 tháng 6
+Cu Giai: 21 tháng 6 - 22 tháng 7
+Su Tu: 23 tháng 7 - 22 tháng 8
+Xu Nu: 23 tháng 8 - 22 tháng 9
+Thien Binh: 23 tháng 9 - 22 tháng 10
+Thien Yet: 23 tháng 10 - 22 tháng 11
+Nhan Ma: 23 tháng 11 - 21 tháng 12
+Ma Ket: 22 tháng 12 - 19 tháng 1
+Bao Binh: 20 tháng 1 - 18 tháng 2
+Song Ngu: 19 tháng 2 - 20 tháng 3
+'''
+
+
+def res(d,m):
+    if(21<=d and m==3) or (d<=19 and m==4): return 'Bach Duong'
+    if (20 <= d and m == 4) or (d <= 20 and m == 5): return 'Kim Nguu'
+    if (21 <= d and m == 5) or (d <= 20 and m == 6): return 'Song Tu'
+    if (21 <= d and m == 6) or (d <= 22 and m == 7): return 'Cu Giai'
+    if (23 <= d and m == 7) or (d <= 22 and m == 8): return 'Su Tu'
+    if (23 <= d and m == 8) or (d <= 22 and m == 9): return 'Xu Nu'
+    if (23 <= d and m == 9) or (d <= 22 and m == 10): return 'Thien Binh'
+    if (23 <= d and m == 10) or (d <= 22 and m == 11): return 'Thien Yet'
+    if (23 <= d and m == 11) or (d <= 21 and m == 12): return 'Nhan Ma'
+    if (22 <= d and m == 12) or (d <= 19 and m == 1): return 'Ma Ket'
+    if (20 <= d and m == 1) or (d <= 18 and m == 2): return 'Bao Binh'
+    if (19 <= d and m == 2) or (d <= 20 and m == 3): return 'Song Ngu'
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        d,m = map(int, input().split())
+        print(res(d,m))
