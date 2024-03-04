@@ -1,0 +1,21 @@
+'''
+description:
+- liệt kê các số fibonacci từ a đến b với a,b cho trước (1<a<b<93)
+'''
+from math import *
+
+def res(n,m):
+    a = [0]*94
+    a[1] = a[2] = 1
+    for i in range(3, 94):
+        a[i] = a[i-1]+a[i-2]
+    for i in range(n,m+1):
+        print(a[i], end=' ')
+    print('')
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a,b = map(int, input().split())
+        res(a,b)
