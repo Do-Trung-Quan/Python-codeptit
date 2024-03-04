@@ -1,0 +1,46 @@
+'''
+ý tưởng:
+- sử dụng nhân ma trận để in ra số fibo thứ n
+- số fibo thứ n sẽ bằng F[0][0] vs F ma trận [1,1,1,0] mũ (n-1)
+'''
+ 
+def fib(n): #hàm tính ma trận [1,1,1,0] mũ n-1 và đưa ra số fibo thứ n
+    F = [[1, 1],  # [1,1,1,0] là ma trận base
+         [1, 0]]
+    if (n == 0):
+        return 0
+    power(F, n - 1)  #tính ma trận [1,1,1,0] mũ n-1
+    return F[0][0]   #trả về số fibo thứ n
+ 
+ 
+def multiply(F, M):   #hàm nhân 2 ma trận và cập nhật kết quả vào ma trận tham số F
+    x = (F[0][0] * M[0][0] +
+         F[0][1] * M[1][0])
+    y = (F[0][0] * M[0][1] +
+         F[0][1] * M[1][1])
+    z = (F[1][0] * M[0][0] +
+         F[1][1] * M[1][0])
+    w = (F[1][0] * M[0][1] +
+         F[1][1] * M[1][1])
+    F[0][0] = x
+    F[0][1] = y
+    F[1][0] = z
+    F[1][1] = w
+ 
+ 
+def power(F, n):   #hàm tính ma trận F mũ n
+    if(n == 0 or n == 1):  #ko cần tính nếu n = 0 hoặc n = 1
+        return
+    M = [[1, 1],  #ma trận base
+         [1, 0]]
+ 
+    power(F, n // 2)   #gọi đệ quy vs n//2 đến khi n==0 hoặc n==1
+    multiply(F, F)    #lấy F mũ 2 trước
+    if (n % 2 != 0):   #nếu n lẻ thì nhân F với ma trận base M
+        multiply(F, M)
+ 
+ 
+# Driver Code
+if __name__ == "__main__":
+    n = int(input)
+    print(fib(n))  #trả về số fibo thứ n
