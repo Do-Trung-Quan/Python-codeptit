@@ -1,0 +1,16 @@
+'''
+description:
+- Kiểm tra một số có chữ số đầu giống chữ số cuối ko?
+'''
+from math import *
+
+def check(u):
+    if(str(u)[0] == str(u)[-1]): return True
+    return False
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        n = input()
+        if(check(n)): print('YES')
+        else: print('NO')
