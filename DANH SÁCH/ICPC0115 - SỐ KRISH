@@ -1,0 +1,23 @@
+'''
+description:
+- số Krish là số có giá trị = tổng giai thừa của các chữ số trong số đó. (VD: 145 = 1! + 4! + 5!  ==> 145 là số Krish)
+- Kiểm tra input xem có phải số Krish không?
+'''
+
+from math import *
+
+def check(u):  #kiểm tra u có phải số Krish không
+    N = n; sum = 0
+    while(N>0):
+        sum+=factorial(N%10)   #cộng dồn giai thừa của từng chữ số dùng hàm factorial()
+        N//=10
+    if(n == sum): return True
+    return False
+
+if __name__ == '__main__':
+    # snt()
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        if(check(n)): print('Yes')
+        else: print('No')
