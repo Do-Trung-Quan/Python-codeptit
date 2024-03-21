@@ -1,0 +1,17 @@
+a = input()
+v = [0]*len(a)
+used = [False]*len(a)
+
+def Try(i):
+    for j in range(len(a)):
+        if(used[j] == False):
+            v[i] = j
+            used[j] = True
+            if(i == len(a)-1):
+                for u in v:
+                    print(a[u],end='')
+                print()
+            else: Try(i+1)
+            used[j] = False
+
+Try(0)
