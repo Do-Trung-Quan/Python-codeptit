@@ -1,0 +1,19 @@
+from math import *
+
+arr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ_.'
+
+def res(K,n):
+    res = ''
+    for i in n:
+        tmp = arr.find(i)
+        res+=arr[(tmp+K)%28]
+    return res[::-1]
+
+
+if __name__ == '__main__':
+    while(1):
+        ip = input()
+        if(ip == '0'): break
+        K,s = ip.split()
+        K = int(K)
+        print(res(K,s))
