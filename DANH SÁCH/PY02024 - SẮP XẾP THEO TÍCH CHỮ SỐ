@@ -1,0 +1,16 @@
+from math import *
+
+def res(u):
+    S = 1; U = int(u)
+    while(U>0):
+        S*=U%10
+        U//=10
+    return (S,int(u))
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        a = list(input().split())
+        a.sort(key = res)
+        print(' '.join(a))
