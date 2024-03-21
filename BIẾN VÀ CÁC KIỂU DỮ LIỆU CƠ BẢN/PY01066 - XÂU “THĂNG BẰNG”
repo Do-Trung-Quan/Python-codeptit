@@ -1,0 +1,13 @@
+def res(n):
+    rev = n[::-1]
+    for i in range(1,len(n)):
+        if(abs(ord(n[i]) - ord(n[i-1])) != abs(ord(rev[i]) - ord(rev[i-1]))):
+            return False
+    return True
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        n = input()
+        if(res(n)): print('YES')
+        else: print('NO')
