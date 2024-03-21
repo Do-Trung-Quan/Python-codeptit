@@ -1,0 +1,19 @@
+from math import *
+
+def res(a,n):
+    sum1 = sum2 = 0
+    for i in range(n):
+        for j in range(n):
+            if(j<n-1-i): sum1+=a[i][j]
+            elif(j>n-1-i): sum2+=a[i][j]
+    if(abs(sum1-sum2) > k): print('NO')
+    else: print('YES')
+    print(abs(sum1 - sum2))
+
+if __name__ == '__main__':
+        n = int(input())
+        a = []
+        for i in range(n):
+            a.append(list(map(int, input().split())))
+        k = int(input())
+        res(a, n)
