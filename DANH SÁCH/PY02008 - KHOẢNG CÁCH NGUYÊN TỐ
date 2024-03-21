@@ -1,0 +1,22 @@
+from math import *
+
+a = [0]*1000000
+vec = []
+
+def snt():
+    a[0] = a[1] = 1
+    for i in range(1001):
+        if(a[i] == 0):
+            for j in range(i*i, 1000000, i): a[j]=1
+    # vec = []
+    for i in range(1000000):
+        if a[i]==0: vec.append(i)
+        if(len(vec) == 1000): break
+
+if __name__ == '__main__':
+    snt()
+    a,b = map(int, input().split())
+    print(b, end=' ')
+    for i in range(a):
+        b+=vec[i]
+        print(b, end=' ')
