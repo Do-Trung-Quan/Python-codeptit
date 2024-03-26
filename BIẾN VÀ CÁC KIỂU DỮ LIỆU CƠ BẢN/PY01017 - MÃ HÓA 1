@@ -1,0 +1,12 @@
+t = int(input())
+for _ in range(t):
+    n = input()
+    res = ''; cnt = 0; tmp = n[0]
+    for i in n:
+        if(tmp == i):
+            cnt+=1
+        else:
+            res+=str(cnt)+tmp
+            tmp = i; cnt = 1
+    res+=str(cnt)+tmp
+    print(res)
