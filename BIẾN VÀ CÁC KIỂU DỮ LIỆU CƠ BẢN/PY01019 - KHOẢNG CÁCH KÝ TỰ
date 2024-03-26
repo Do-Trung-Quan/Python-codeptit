@@ -1,0 +1,17 @@
+from math import *
+
+def check(u):
+    for i in range(1,len(u)):
+        num1 = abs(ord(u[i]) - ord(u[i-1]))
+        num2 = abs(ord(u[len(u)-i-1]) - ord(u[len(u)-i]))
+        # print(num1, num2, sep=' | ')
+        if num1 != num2: return False
+    return True
+
+if __name__ == '__main__':
+    # snt()
+    t = int(input())
+    for i in range(t):
+        s = input()
+        if(check(s)): print('YES')
+        else: print('NO')
