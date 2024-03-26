@@ -1,0 +1,12 @@
+from math import *
+
+if __name__ == '__main__':
+    t = int(input())
+    while(t>0):
+        t-=1
+
+        n = list(input())
+        m = n[:]
+        m.sort()
+        if(n == m): print('YES')
+        else: print('NO')
