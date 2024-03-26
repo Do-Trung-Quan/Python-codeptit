@@ -1,0 +1,8 @@
+t = int(input())
+for _ in range(t):
+    n = input()
+    res = ''
+    for i in range(0, len(n)-1, 2):
+        tmp = [n[i] for _ in range(int(n[i+1]))]
+        res += ''.join(tmp)
+    print(res)
