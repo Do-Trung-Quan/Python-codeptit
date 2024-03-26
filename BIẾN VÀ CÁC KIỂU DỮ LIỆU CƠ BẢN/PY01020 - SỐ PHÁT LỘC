@@ -1,0 +1,13 @@
+from math import *
+
+def check(u):
+    if(u[-2:]=='86'): return True
+    return False
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        s = input()
+        if(check(s)): print('YES')
+        else: print('NO')
